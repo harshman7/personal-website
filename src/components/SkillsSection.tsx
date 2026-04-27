@@ -21,12 +21,9 @@ export function SkillsSection({ byCategory }: { byCategory: Record<SkillCategory
 
   return (
     <SectionShell id="skills" className="bg-[#0f0f0f]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionTitle>Skills</SectionTitle>
-        <StaggerContainer
-          className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-16"
-          stagger={0.12}
-        >
+        <StaggerContainer className="flex flex-col gap-12 md:gap-16" stagger={0.12}>
           {CATEGORY_ORDER.map((cat) => {
             const list = byCategory[cat] ?? [];
             if (list.length === 0) return null;

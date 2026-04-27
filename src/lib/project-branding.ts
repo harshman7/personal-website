@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  AppWindow,
   Car,
   Clapperboard,
   Cpu,
@@ -53,14 +52,6 @@ export function getProjectBrand(project: Project): ProjectBrand {
       from: "from-rose-500",
       to: "to-orange-500",
       ring: "ring-rose-400/30",
-    };
-  }
-  if (/oxprox|investor|voting|visualis|visualiz|take-home/.test(t)) {
-    return {
-      Icon: AppWindow,
-      from: "from-cyan-500",
-      to: "to-blue-600",
-      ring: "ring-cyan-400/30",
     };
   }
   if (/retire|financial|ready inc|planning|consulting|retireready/.test(t)) {

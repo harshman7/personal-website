@@ -17,7 +17,7 @@ export function SectionTitle({
       delayChildren={0.06}
     >
       <StaggerItem>
-        <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+        <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
           {children}
         </h2>
       </StaggerItem>

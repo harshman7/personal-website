@@ -85,7 +85,7 @@ export function Hero({ profile }: { profile: Profile }) {
 
             <motion.h1
               variants={heroItemVariants}
-              className="mb-6 max-w-4xl text-5xl font-bold tracking-tight text-white drop-shadow-sm md:mb-8 md:text-7xl lg:text-8xl"
+              className="font-display mb-6 max-w-4xl text-5xl font-bold tracking-tight text-white drop-shadow-sm md:mb-8 md:text-7xl lg:text-8xl"
             >
               {profile.fullName}
             </motion.h1>
@@ -151,7 +151,9 @@ function StaticHero({ profile, initial }: { profile: Profile; initial: string })
           {initial}
         </div>
       )}
-      <h1 className="mb-6 max-w-4xl text-5xl font-bold text-white md:mb-8 md:text-7xl lg:text-8xl">{profile.fullName}</h1>
+      <h1 className="font-display mb-6 max-w-4xl text-5xl font-bold text-white md:mb-8 md:text-7xl lg:text-8xl">
+        {profile.fullName}
+      </h1>
       <p className="mb-4 text-2xl text-gray-300 md:mb-5 md:text-3xl">
         <span className="bg-gradient-to-r from-sky-200 to-sky-400 bg-clip-text text-transparent">{profile.tagline}</span>
       </p>

@@ -2,6 +2,8 @@
 
 Single-page portfolio built with **Next.js** (App Router), **TypeScript**, **Tailwind CSS v4**, **Framer Motion**, and **Lucide** icons. Content is defined in TypeScript under `src/lib/` (no database).
 
+**Live site:** [harshmanpreet.vercel.app](https://harshmanpreet.vercel.app)
+
 ## Develop
 
 ```bash
@@ -22,6 +24,7 @@ npm start
 
 1. Push this repo to GitHub and import the project in [Vercel](https://vercel.com).
 2. Framework preset: **Next.js**. Build: `next build`, Output: default.
+3. After deploy, the production URL will follow your Vercel project (e.g. [harshmanpreet.vercel.app](https://harshmanpreet.vercel.app)).
 
 ## Edit content
 

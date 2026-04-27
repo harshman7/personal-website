@@ -47,7 +47,7 @@ export function SiteHeader({ siteTitle }: { siteTitle: string }) {
         className={`mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 ${reduce ? "h-16" : ""}`}
         style={reduce ? undefined : { minHeight: heightPx }}
       >
-        <a href="#home" className="text-xl font-bold text-white">
+        <a href="#home" className="font-display text-xl font-bold text-white">
           {siteTitle}
         </a>
         <button

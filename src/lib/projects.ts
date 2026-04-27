@@ -53,20 +53,6 @@ export const projects: Project[] = [
     order: 30,
   },
   {
-    title: "OxProx — Take-home (Full Stack)",
-    description:
-      "Take-home: interactive investor-voting data visualisation plus written task; deployed demo.",
-    techStack: ["TypeScript", "React", "Next.js", "Vercel"],
-    projectDate: "2026",
-    features: [
-      "Task 1: interactive investor-voting visualisation",
-      "Task 2: written deliverables in-repo",
-    ],
-    githubUrl: gh("oxprox-task"),
-    liveUrl: "https://oxprox-task.vercel.app",
-    order: 22,
-  },
-  {
     title: "Retire Ready Inc — Marketing site",
     description:
       "Production marketing site for a financial consulting and retirement planning business.",
