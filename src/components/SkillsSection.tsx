@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { StaggerContainer, StaggerItem } from "./StaggerReveal";
+import { SectionShell } from "./SectionShell";
 import { SectionTitle } from "./SectionTitle";
 import { SkillBar } from "./SkillBar";
 import { SKILL_CATEGORY_LABELS, type Skill, type SkillCategory } from "@/lib/types";
@@ -19,11 +20,11 @@ export function SkillsSection({ byCategory }: { byCategory: Record<SkillCategory
   const reduce = useReducedMotion();
 
   return (
-    <section id="skills" className="bg-[#0f0f0f] py-24 md:py-32 lg:py-40">
+    <SectionShell id="skills" className="bg-[#0f0f0f]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle>Skills</SectionTitle>
         <StaggerContainer
-          className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-12"
+          className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-16"
           stagger={0.12}
         >
           {CATEGORY_ORDER.map((cat) => {
@@ -62,6 +63,6 @@ export function SkillsSection({ byCategory }: { byCategory: Record<SkillCategory
           })}
         </StaggerContainer>
       </div>
-    </section>
+    </SectionShell>
   );
 }

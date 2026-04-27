@@ -3,6 +3,7 @@
 import { MapPin } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { StaggerContainer, StaggerItem } from "./StaggerReveal";
+import { SectionShell } from "./SectionShell";
 import { SectionTitle } from "./SectionTitle";
 import type { Education, Profile } from "@/lib/types";
 
@@ -20,10 +21,10 @@ export function AboutSection({
   const sorted = education.slice().sort((a, b) => a.order - b.order);
 
   return (
-    <section id="about" className="bg-[#0f0f0f] py-24 md:py-32 lg:py-40">
+    <SectionShell id="about" className="bg-[#0f0f0f]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle>About Me</SectionTitle>
-        <StaggerContainer className="grid items-start gap-16 md:gap-20 lg:grid-cols-2">
+        <StaggerContainer className="grid items-start gap-20 md:gap-24 lg:grid-cols-2">
           <StaggerItem>
             <motion.div
               whileHover={reduce ? undefined : { y: -6 }}
@@ -34,8 +35,8 @@ export function AboutSection({
             </motion.div>
           </StaggerItem>
           <div>
-            <h3 className="mb-8 text-2xl font-semibold text-white md:text-3xl">Education</h3>
-            <StaggerContainer className="space-y-8" stagger={0.12}>
+            <h3 className="mb-10 text-2xl font-semibold text-white md:mb-12 md:text-3xl">Education</h3>
+            <StaggerContainer className="space-y-10 md:space-y-12" stagger={0.12}>
               {sorted.length === 0 ? (
                 <p className="text-gray-400">Education information coming soon.</p>
               ) : (
@@ -67,6 +68,6 @@ export function AboutSection({
           </div>
         </StaggerContainer>
       </div>
-    </section>
+    </SectionShell>
   );
 }

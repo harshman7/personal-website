@@ -2,10 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
-
-const ease = [0.22, 1, 0.36, 1] as const;
-
-const defaultViewport = { once: true, margin: "-10% 0px -8% 0px" as const, amount: "some" as const };
+import { DURATION, defaultRevealViewport, easeOutExpo } from "@/lib/motion";
 
 export function Reveal({
   children,
@@ -30,10 +27,10 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={defaultViewport}
-      transition={{ duration: 0.65, delay: staggerDelay, ease }}
+      initial={{ opacity: 0, y, scale: 0.99, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+      viewport={defaultRevealViewport}
+      transition={{ duration: DURATION.reveal, delay: staggerDelay, ease: easeOutExpo }}
     >
       {children}
     </motion.div>

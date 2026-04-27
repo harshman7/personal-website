@@ -3,6 +3,7 @@
 import { Award, ExternalLink } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { StaggerContainer, StaggerItem } from "./StaggerReveal";
+import { SectionShell } from "./SectionShell";
 import { SectionTitle } from "./SectionTitle";
 import type { Certification } from "@/lib/types";
 
@@ -10,10 +11,10 @@ export function CertificationsSection({ items }: { items: Certification[] }) {
   const reduce = useReducedMotion();
   if (items.length === 0) return null;
   return (
-    <section className="bg-[#0f0f0f] py-24 md:py-32 lg:py-40">
+    <SectionShell className="bg-[#0f0f0f]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle>Certifications</SectionTitle>
-        <StaggerContainer className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3 lg:gap-12" stagger={0.12}>
+        <StaggerContainer className="grid gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-16" stagger={0.12}>
           {items.map((cert) => (
             <StaggerItem key={cert.name}>
               <motion.div
@@ -42,6 +43,6 @@ export function CertificationsSection({ items }: { items: Certification[] }) {
           ))}
         </StaggerContainer>
       </div>
-    </section>
+    </SectionShell>
   );
 }

@@ -3,6 +3,7 @@
 import { MapPin } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { StaggerContainer, StaggerItem } from "./StaggerReveal";
+import { SectionShell } from "./SectionShell";
 import { SectionTitle } from "./SectionTitle";
 import type { WorkExperience } from "@/lib/types";
 
@@ -15,10 +16,10 @@ export function ExperienceSection({ items }: { items: WorkExperience[] }) {
   const reduce = useReducedMotion();
 
   return (
-    <section id="experience" className="bg-dark-bg py-24 md:py-32 lg:py-40">
+    <SectionShell id="experience" className="bg-dark-bg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle>Work Experience</SectionTitle>
-        <StaggerContainer className="space-y-12 md:space-y-16">
+        <StaggerContainer className="space-y-16 md:space-y-20 lg:space-y-24">
           {list.length === 0 ? (
             <p className="text-center text-gray-400">Work experience information coming soon.</p>
           ) : (
@@ -75,6 +76,6 @@ export function ExperienceSection({ items }: { items: WorkExperience[] }) {
           )}
         </StaggerContainer>
       </div>
-    </section>
+    </SectionShell>
   );
 }

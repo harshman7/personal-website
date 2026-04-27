@@ -1,40 +1,17 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
+import { defaultRevealViewport, STAGGER, staggerContainerVariants, staggerItemVariants } from "@/lib/motion";
 
-const ease = [0.22, 1, 0.36, 1] as const;
-
-export const staggerContainerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.13,
-      delayChildren: 0.06,
-    },
-  },
-};
-
-export const staggerItemVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 36,
-    filter: "blur(6px)",
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.6, ease },
-  },
-};
+export { staggerContainerVariants, staggerItemVariants };
 
 /** Viewport-driven stagger: children use StaggerItem one-by-one. */
 export function StaggerContainer({
   children,
   className,
-  stagger = 0.13,
-  delayChildren = 0.06,
+  stagger = STAGGER.section,
+  delayChildren = 0.08,
 }: {
   children: ReactNode;
   className?: string;
@@ -50,7 +27,7 @@ export function StaggerContainer({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-10% 0px -6% 0px", amount: "some" }}
+      viewport={defaultRevealViewport}
       variants={{
         hidden: {},
         visible: {

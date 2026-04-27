@@ -31,7 +31,7 @@ export default function Home() {
         <CertificationsSection items={certifications} />
         <ContactSection profile={profile} />
       </main>
-      <footer className="border-t border-white/5 bg-[#0a0a0a] py-12 text-center text-sm text-gray-500 md:py-16">
+      <footer className="border-t border-white/5 bg-[#0a0a0a] py-16 text-center text-sm text-gray-500 md:py-24">
         <p>© {new Date().getFullYear()} {profile.fullName}. All rights reserved.</p>
       </footer>
     </>

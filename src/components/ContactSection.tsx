@@ -3,6 +3,7 @@
 import { Mail, Phone } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { StaggerContainer, StaggerItem } from "./StaggerReveal";
+import { SectionShell } from "./SectionShell";
 import { SectionTitle } from "./SectionTitle";
 import { SocialIconLinks } from "./SocialIconLinks";
 import type { Profile } from "@/lib/types";
@@ -10,7 +11,7 @@ import type { Profile } from "@/lib/types";
 export function ContactSection({ profile }: { profile: Profile }) {
   const reduce = useReducedMotion();
   return (
-    <section id="contact" className="bg-dark-bg py-24 md:py-32 lg:py-40">
+    <SectionShell id="contact" className="bg-dark-bg">
       <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <SectionTitle>Get In Touch</SectionTitle>
         <StaggerContainer className="flex flex-col items-center" stagger={0.15}>
@@ -51,6 +52,6 @@ export function ContactSection({ profile }: { profile: Profile }) {
           ) : null}
         </StaggerContainer>
       </div>
-    </section>
+    </SectionShell>
   );
 }
