@@ -62,12 +62,12 @@ export function Hero({ profile }: { profile: Profile }) {
           >
             <motion.div variants={heroItemVariants} className="mb-12 flex justify-center">
               {profile.profileImageSrc ? (
-                <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl ring-1 ring-white/10">
+                <div className="relative h-52 w-52 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl ring-1 ring-white/10 md:h-56 md:w-56">
                   <Image
                     src={profile.profileImageSrc}
                     alt={profile.fullName}
-                    width={160}
-                    height={160}
+                    width={224}
+                    height={224}
                     className="h-full w-full object-cover object-top"
                     priority
                   />
@@ -76,7 +76,7 @@ export function Hero({ profile }: { profile: Profile }) {
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                  className="flex h-40 w-40 cursor-default items-center justify-center rounded-full border-4 border-white/20 bg-gradient-to-br from-primary via-secondary to-tertiary text-5xl font-bold text-white shadow-2xl ring-1 ring-sky-500/20"
+                  className="flex h-52 w-52 cursor-default items-center justify-center rounded-full border-4 border-white/20 bg-gradient-to-br from-primary via-secondary to-tertiary text-6xl font-bold text-white shadow-2xl ring-1 ring-sky-500/20 md:h-56 md:w-56 md:text-7xl"
                 >
                   {initial}
                 </motion.div>
@@ -136,18 +136,18 @@ function StaticHero({ profile, initial }: { profile: Profile; initial: string })
   return (
     <div className="flex flex-col items-center">
       {profile.profileImageSrc ? (
-        <div className="mb-12 h-40 w-40 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl">
+        <div className="mb-12 h-52 w-52 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl md:h-56 md:w-56">
           <Image
             src={profile.profileImageSrc}
             alt={profile.fullName}
-            width={160}
-            height={160}
+            width={224}
+            height={224}
             className="h-full w-full object-cover object-top"
             priority
           />
         </div>
       ) : (
-        <div className="mb-12 flex h-40 w-40 items-center justify-center rounded-full border-4 border-white/20 bg-gradient-to-br from-primary via-secondary to-tertiary text-5xl font-bold text-white">
+        <div className="mb-12 flex h-52 w-52 items-center justify-center rounded-full border-4 border-white/20 bg-gradient-to-br from-primary via-secondary to-tertiary text-6xl font-bold text-white md:h-56 md:w-56 md:text-7xl">
           {initial}
         </div>
       )}
